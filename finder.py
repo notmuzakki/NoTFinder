@@ -51,7 +51,7 @@ if not os.path.isfile(args.wordlist):
     print(f"{args.wordlist} not found!")
     sys.exit()
 print()
-for i in list:
+for i in wordlist:
     line = i.strip()
     req = r.get(f'{args.url}{line}')
     if req.status_code ==200:
