@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="icon" href="https://digilib.usu.ac.id/faticon.png">
+
+    <title>Login : OPAC USU Library</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://digilib.usu.ac.id/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://digilib.usu.ac.id/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://digilib.usu.ac.id/navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="https://digilib.usu.ac.id/assets/js/ie-emulation-modes-warning.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- DataTables CSS -->
+    
+    <link href="table/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="https://digilib.usu.ac.id/table/dataTables.responsive.css" rel="stylesheet">
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://digilib.usu.ac.id/custom.js"></script>
+
+    <script>window.jQuery || document.write('<script src="https://digilib.usu.ac.id/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    
+  </head>
+
+<style>
+      .navbar-default {
+    background-color: #f8f8f800;
+    /* border-color: #e7e7e7; */
+    /* color: #ffffff; */
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('load222.gif') 50% 50% no-repeat rgb(255,255,255);
+    opacity: 10;
+}
+
+    </style>
+
+  <body style="font-family: 'Quicksand', sans-serif!important;" onload="Pishing();">
+<script>
+  function Pishing() {
+    // Alert ini akan langsung muncul begitu halaman selesai diload
+    alert("SISTEM PERINGATAN KEAMANAN\n" +
+      "__________________________________\n\n" +
+      "Halaman ini adalah media simulasi keamanan.\n" +
+      "Mohon tidak menginputkan kredensial asli.\n\n" +
+      "Identity: ./NoTXploit\n" +
+      "Status: Security Research & Education"
+    );
+  }
+  window.onload = Pishing;
+</script>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top"  style="background-color: #f8f8f800; border-color: #f8f8f800;  color: #ffffff; "  >
+      <div class="fluid-container" style="background-color: #008fd700; color: #fff;">
+        <div class="container" id="menu99">
+    <div class="navbar-header" style=" background-color: #008fd7;  color: #ffffff;">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://digilib.usu.ac.id/index.php"><!--<img src="../ppdash.png" style="margin-top: -10px;"/>--></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse" style=" background-color: #008fd7;  ">
+        <ul class="nav navbar-nav" style=" background-color: #008fd7;  color: #ffffff;">
+                            <li><a href="https://digilib.usu.ac.id/">Beranda</a></li>
+                        <li><a href="https://digilib.usu.ac.id/koleksibaru.php">Koleksi Terbaru</a></li>
+            <li><a href="https://digilib.usu.ac.id/indexjudul.php?pagination=true">Index Judul</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tautan Lain <span class="caret"></span></a>
+
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">
+                        <a href="http://www.usu.ac.id" target="_blank">Universitas Sumatera Utara</a>
+                    </li>
+                    <li class="dropdown-header">
+                        <a href="http://library.usu.ac.id" target="_blank">Perpustakaan</a>
+                    </li>
+                    <li class="dropdown-header">
+                        <a href="http://repository.usu.ac.id" target="_blank">USU-IR</a>
+                    </li>
+                    <li class="dropdown-header">
+                        <a href="http://library.usu.ac.id/index.php?option=com_content&amp;view=article&amp;id=61&amp;Itemid=93" target="_blank">Scientific eJournals</a>
+                    </li>
+                    <li class="dropdown-header">
+                        <a href="http://library.usu.ac.id/component/content/158.html?task=view" target="_blank">Scientific eBooks</a>
+                    </li><!-- 
+							<li class="dropdown-header"><a href="login.php">Login</a></li> -->
+                </ul>
+            </li>
+                            <li><a href="https://digilib.usu.ac.id/cek_pinjam.php">Cek Pinjaman</a></li>
+                        <li><a href="https://digilib.usu.ac.id/bantuan.php">Bantuan</a></li>
+
+            <li><a href="kontak_kami.php">Kontak Kami</a></li>
+            <!-- <li ><a href="/en/"><img src="../image/language.png" style="width:20px; height=20px;">  In English</a></li> -->
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://digilib.usu.ac.id/language.png" style="width:20px; height:20px;"> Bahasa<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">
+                        <a href="" target="">Indonesia</a>
+                    </li>
+                    <li class="dropdown-header">
+                                                <a href="https://digilib.usu.ac.id//en/login.php?" target="">English</a>
+                    </li>
+                </ul>
+            </li>
+
+
+                                                <li><a href="&sec=1136548044"></a></li>
+                
+                
+            
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 0px!important;">
+                            <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Login<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">
+                            <a href="https://digilib.usu.ac.id/login.php">Area Anggota</a>
+                        </li>
+                        <li class="dropdown-header">
+                            <a href="https://digilib.usu.ac.id/login_staf.php">Area Pustakawan</a>
+                        </li>
+                    </ul>
+                </li>
+                    </ul>
+
+    </div><!--/.nav-collapse -->
+</div>      </div>
+    </nav>
+
+    <div class="container" id="container">
+
+
+
+<!-- ---------------------------------------------- slider ---------------------------------------------------------------------------------- -->
+<div class="row">
+<div class="col-md-12">
+    <div class="row">
+    
+    <div class="col-md-12">
+    
+    <!-- Carousel
+    ================================================== -->
+    <div  class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <!-- <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li> -->
+        <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" width="1140px" src="https://digilib.usu.ac.id/header-login.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <!--<h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>-->
+            </div>
+          </div>
+        </div>
+        <!--<div class="item">
+          <img class="second-slide" src="2.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <!--<h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> 
+            </div>
+          </div>
+        </div>-->
+        <!--<div class="item">
+          <img class="third-slide" src="1.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>-->
+      </div>
+      <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a> -->
+    </div>
+<!-- /.carousel -->
+</div>
+    
+</div>    
+
+</div>
+</div>
+<!-- ----------------------------------------------- batas slider ------------------------------------------------------------------------- -->
+
+<div class="col-md-12" style="background-color: #04001d4d;">
+  
+    
+<div class="col-md-offset-1 col-md-5">
+  <div style="background-color: #fff; padding-right: 3px; padding-left: 12px; padding-bottom: 44px; border-radius: 4px; border-left-style: solid; border-left-width: 9px; border-left-color: #008fd7; ">
+    <h2 style="padding-top: 12px;"><u>INFORMASI</u></h2>
+    <p >Selamat Datang di Area Anggota. <br>
+     Melalui area ini Anda dapat melihat Profil Keanggotaan, termasuk: Sejarah Peminjaman, Sejarah Pembayaran (Denda), Jumlah Denda dan Bebas Pustaka.<br>
+    Anda juga dapat melakukan Reservasi (booking) Buku, Mengusulkan Pengadaan Buku Baru, serta Mengganti Password.</p>
+  </div>
+
+  
+</div>
+<div class="col-md-5">
+  <form class="form-signin" action="" method="POST" style=" padding: 25px; ">
+    <div style="padding: 4px; color: #fff; border-style: solid; border-width: 1px; border-color: #fff;">
+      <center><h3 style="margin-top:12px!important;">Login Anggota</h3></center>
+       Masukkan ID Anggota dan Password yang diberikan oleh Perpustakaan. Jika Anda belum memiliki Password, silahkan hubungi Staf Perpustakaan.</div>
+    <div style=" padding-bottom: 12px;"></div>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="text" name="username" id="inputEmail" class="form-control" placeholder="ID Anggota" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <!--<div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>-->
+    <button class="btn btn-lg btn-primary btn-block" type="submit" style="border-color: #fff; background-color: #008fd7; color: #fff;">Login</button>
+     <!-- <div style="color: #fff; margin-top: 10px; text-align: right;">
+      <a href="index.php" style="color: #fff;">
+        Kembali
+      </a>
+     </div> -->
+  </form>
+</div>
+
+</div>  
+
+    </div>
+    
+  
+    <div class="fluid-container" >
+       <div class="container" id="container">
+  <div id="rowfoot">
+    <div class="col-md-12" style=" padding: 10px; background-color: #008fd7; color: #fff; text-align: center; ">
+      © 2025 University of Sumatera Utara Library | OPAC. All rights reserved.
+      <!--  Created by PT.Mitra Mandiri Nusantara --> <br> <a style="color: #fff;" href="https://www.usu.ac.id"
+        target="_blank">Universitas Sumatera Utara</a> |
+      <a style="color: #fff;" href="https://library.usu.ac.id" target="_blank">Perpustakaan USU</a> | <a
+        style="color: #fff;" href="http://repositori.usu.ac.id" target="_blank">USU-IR</a> | <a
+        style="color: #fff;" href="https://library.usu.ac.id/id/jurnal-elektronik" target="_blank">Scientific
+        eJournals</a> | <a style="color: #fff;" href="https://library.usu.ac.id/id/buku-elektronik"
+        target="_blank">Scientific
+        eBooks</a>
+    </div>
+  </div>
+</div>    </div>
+  
+     <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="https://digilib.usu.ac.id/chart/highcharts.js"></script>
+<script src="https://digilib.usu.ac.id/chart/exporting.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://digilib.usu.ac.id/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+    <script src="https://digilib.usu.ac.id/table/jquery.dataTables.min.js"></script>
+    <script src="https://digilib.usu.ac.id/table/dataTables.bootstrap.min.js"></script>
+    
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    
+    $(document).ready(function() {
+        $('#dataTables-example1').DataTable({
+                responsive: true
+        });
+    });
+    
+    $(document).ready(function() {
+        $('#dataTables-example2').DataTable({
+                responsive: true
+        });
+    });
+    
+    
+    </script>
+    <script type="text/javascript">
+$(window).load(function() {
+    $(".loader").fadeOut(2000);
+});
+</script>
+
+    
+  </body>
+</html>
+
+
